@@ -23,14 +23,6 @@ export const styles = StyleSheet.create({
     fontFamily: fonts.montserrat.mediumItalic,
   },
   textInputStyle: {
-    backgroundColor: '#ffffff',
-    padding: 12,
-    borderRadius: 12,
-    width: '100%',
     textAlign: 'center',
-    fontSize: 20,
-    color: '#000',
-    fontFamily: fonts.montserrat.regular,
-    marginBottom: 12,
   },
 });

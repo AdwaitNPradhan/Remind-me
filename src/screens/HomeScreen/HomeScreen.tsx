@@ -1,11 +1,11 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import React, { useEffect } from 'react';
 import LocationPickerBSM from '../../components/LocationPickerBSM/LocationPickerBSM';
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView enabled behavior={'height'} style={styles.container}>
       <LocationPickerBSM />
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

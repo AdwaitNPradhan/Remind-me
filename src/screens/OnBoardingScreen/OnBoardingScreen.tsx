@@ -4,6 +4,7 @@ import Typography from '../../components/Typography/Typography';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import useStore from '../../zustand';
 import { styles } from './OnBoardingScreen.styles';
+import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
 
 const OnBoardingScreen = () => {
   const [name, setName] = useState('');
@@ -20,7 +21,7 @@ const OnBoardingScreen = () => {
         <Typography textStyles={styles.descriptionText}>
           This is not just a location based reminder app. Its more than that.
         </Typography>
-        <TextInput
+        <CustomTextInput
           style={styles.textInputStyle}
           placeholder="Enter your name"
           placeholderTextColor={'#999'}

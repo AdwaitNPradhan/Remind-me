@@ -5,6 +5,7 @@ import OnBoardingScreen from '../screens/OnBoardingScreen/OnBoardingScreen';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import Video from 'react-native-video';
 import { GetVid } from '../constants/assets';
+import useStore from '../zustand';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,10 +17,17 @@ const AuthNavigator = () => {
   useEffect(() => {
     setVideoUrl(GetVid());
     setSplashIsVisible(true);
+    const a = setTimeout(() => {
+      useStore.persist.rehydrate();
+    }, 1200);
     const t = setTimeout(() => {
       setSplashIsVisible(false);
-    }, 1200);
-    return () => clearTimeout(t);
+    }, 1700);
+
+    return () => {
+      clearTimeout(t);
+      clearTimeout(a);
+    };
   }, []);
 
   return (

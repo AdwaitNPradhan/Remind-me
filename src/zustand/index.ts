@@ -43,6 +43,7 @@ const useStore = create<StoreState>()(
     {
       name: 'remind-me.app#zustand',
       storage: createJSONStorage(() => ZustandMMKVStorage),
+      skipHydration: true,
     },
   ),
 );

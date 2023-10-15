@@ -5,7 +5,6 @@ import { styles } from './SplashScreen.styles';
 import Typography from '../../components/Typography/Typography';
 
 const SplashScreen = () => {
-  const { user } = useStore();
   return (
     <View style={styles.container}>
       <Typography>SplashScreen</Typography>

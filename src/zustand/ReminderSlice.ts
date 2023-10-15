@@ -2,14 +2,13 @@ import { getItemInES, setItemInES } from '../utils/EncryptedLocalStorage';
 import { StoreSlice } from '.';
 interface Reminder {
   id: string;
-  title?: string;
-  location?: {
+  title: string;
+  location: {
     title?: string,
-    lat?: number,
-    lon?: number,
+    lat: number,
+    lon: number,
   };
   radius: number;
-  unit: 'm' | 'km';
   description?: string;
   createdAt?: Date;
   isActive?: boolean;
