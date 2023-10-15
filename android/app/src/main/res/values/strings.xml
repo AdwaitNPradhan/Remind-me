@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">WhereAmI</string>
+    <string name="app_name">Remind Me</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">URgMNUeQBgop7bTYyPXssmt3MPlfIeN92SIk3</string>
 </resources>
