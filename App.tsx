@@ -1,5 +1,5 @@
-import "react-native-gesture-handler";
-import React from 'react';
+import 'react-native-gesture-handler';
+import React, { useEffect } from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
@@ -7,19 +7,26 @@ import HomeScreen from './src/screens/DevScreen/DevScreen';
 import CodePush from 'react-native-code-push';
 import { NavigationContainer } from '@react-navigation/native';
 import NavigatorBase from './src/navigation/NavigatorBase';
+import { PaperProvider } from 'react-native-paper';
+import { CheckForPermissions } from './src/utils/GetPermissions';
 
-function App(): JSX.Element {
+const App = () => {
+  useEffect(() => {
+    CheckForPermissions();
+  }, []);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <NavigationContainer>
-        <SafeAreaView style={{ backgroundColor: 'black', flex: 1 }}>
-          <StatusBar barStyle={'light-content'} />
-          <NavigatorBase />
-        </SafeAreaView>
-      </NavigationContainer>
+      <PaperProvider>
+        <NavigationContainer>
+          <SafeAreaView style={{ backgroundColor: 'black', flex: 1 }}>
+            <StatusBar barStyle={'light-content'} />
+            <NavigatorBase />
+          </SafeAreaView>
+        </NavigationContainer>
+      </PaperProvider>
     </GestureHandlerRootView>
   );
-}
+};
 
 export default CodePush({
   checkFrequency: CodePush.CheckFrequency.MANUAL,

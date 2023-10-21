@@ -9,6 +9,7 @@ export interface UserSlice {
   user: User;
   onBoardUser: (name: string) => void;
   removeUser: () => void;
+  clearUserState: () => void;
 }
 
 const CreateUserStore: StoreSlice<UserSlice> = (set, get) => ({
@@ -17,7 +18,6 @@ const CreateUserStore: StoreSlice<UserSlice> = (set, get) => ({
     onBoarded: false,
   },
   onBoardUser: (name: string) => {
-    console.log('asdafa', name);
     set(() => ({
       user: { name: name, onBoarded: true },
     }));
@@ -27,6 +27,13 @@ const CreateUserStore: StoreSlice<UserSlice> = (set, get) => ({
       user: { name: '', onBoarded: false },
     }));
   },
+  clearUserState: () =>
+    set(
+      {
+        user: { name: '', onBoarded: false },
+      },
+      true,
+    ),
 });
 
 export default CreateUserStore;

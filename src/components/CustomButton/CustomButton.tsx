@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import fonts from '../../constants/fonts';
+import colors from '../../constants/colors';
 
 interface CustomButtonProps {
   title: string;
@@ -41,7 +42,7 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   buttonStyles: {
-    backgroundColor: '#000',
+    backgroundColor: colors.heavyBlue,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,

@@ -18,11 +18,8 @@ const getItemInES = async (key: string) => {
 };
 
 const removeItemInES = async (key: string) => {
-  console.log(key);
   try {
-    await EncryptedStorage.removeItem(key, () => {
-      console.log('removed', key);
-    });
+    await EncryptedStorage.removeItem(key, () => {});
   } catch (e) {
     console.error('LS_ACT', e);
   }

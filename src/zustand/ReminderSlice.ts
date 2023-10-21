@@ -1,17 +1,16 @@
-import { getItemInES, setItemInES } from '../utils/EncryptedLocalStorage';
 import { StoreSlice } from '.';
-interface Reminder {
+export interface Reminder {
   id: string;
   title: string;
   location: {
-    title?: string,
+    title: string,
     lat: number,
     lon: number,
   };
   radius: number;
   description?: string;
-  createdAt?: Date;
-  isActive?: boolean;
+  createdAt: string;
+  isActive: boolean;
 }
 export interface ReminderSlice {
   reminders: Reminder[];
@@ -20,6 +19,7 @@ export interface ReminderSlice {
   switchReminderActive: (reminderId: string) => void;
   updateAndSaveReminder: (rem: Reminder) => void;
   removeReminder: (reminderId: string) => void;
+  clearRemindersState: () => void;
 }
 
 const CreateReminderSlice: StoreSlice<ReminderSlice> = (set, get) => ({
@@ -58,5 +58,12 @@ const CreateReminderSlice: StoreSlice<ReminderSlice> = (set, get) => ({
       ),
     }));
   },
+  clearRemindersState: () =>
+    set(
+      {
+        reminders: [],
+      },
+      true,
+    ),
 });
 export default CreateReminderSlice;

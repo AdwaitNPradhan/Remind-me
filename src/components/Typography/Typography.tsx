@@ -3,7 +3,7 @@ import React from 'react';
 import fonts from '../../constants/fonts';
 
 interface TypographyProps {
-  textStyles?: TextStyle;
+  textStyles?: TextStyle | TextStyle[];
   title?: string;
   children?: any;
   options?: TextProps;
